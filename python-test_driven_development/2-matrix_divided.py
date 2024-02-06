@@ -34,4 +34,8 @@ def matrix_divided(matrix, div):
         if first_row != len(row):
             raise TypeError('Each row of the matrix must have the same size')
 
+<<<<<<< HEAD
     return [[round(i / div, 2) for i in row] for row in matrix]
+=======
+    return [[round(i / div, 2) for i in row] for row in matrix]
+>>>>>>> 1ffe2787dd3992ad30fa28f39cb9c087feeb5b30
