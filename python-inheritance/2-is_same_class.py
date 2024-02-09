@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    funcion that return a boolean
+    function that return a boolean
 """
 
 
