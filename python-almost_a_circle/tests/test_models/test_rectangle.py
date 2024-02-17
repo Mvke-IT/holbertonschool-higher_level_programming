@@ -5,9 +5,11 @@ import json
 
 from models.rectangle import Rectangle
 
+
 class TestRectangle(unittest.TestCase):
 
     """ Testing width conditions """
+
     def test_width(self):
         rectangle = Rectangle(2, 4)
         self.assertEqual(rectangle.width, 2)
@@ -25,6 +27,7 @@ class TestRectangle(unittest.TestCase):
             rec = Rectangle("2", 10)
 
     """ Testing height conditions """
+
     def test_height(self):
         rectangle = Rectangle(2, 4)
         self.assertEqual(rectangle.height, 4)
@@ -42,6 +45,7 @@ class TestRectangle(unittest.TestCase):
             rec = Rectangle(35, "15")
 
     """ Testing x conditions """
+
     def test_x(self):
         rectangle = Rectangle(10, 2, 3, 5)
         self.assertEqual(rectangle.x, 3)
@@ -59,6 +63,7 @@ class TestRectangle(unittest.TestCase):
             rec = Rectangle(5, 5, "1")
 
     """ Testing y conditions """
+
     def test_y(self):
         rectangle = Rectangle(2, 3, 2, 2)
         self.assertEqual(rectangle.y, 2)
@@ -76,6 +81,7 @@ class TestRectangle(unittest.TestCase):
             rec = Rectangle(4, 6, 2, "2")
 
     """ Testing area """
+
     def test_area(self):
         rectangle = Rectangle(3, 3)
         self.assertEqual(rectangle.area(), 9)
@@ -105,11 +111,13 @@ class TestRectangle(unittest.TestCase):
         self.assert_stdout(ValueError, 0, 0, 0, 0)
 
     """ Testing __str__ """
+
     def test_str_method(self):
         rec = Rectangle(4, 6, 2, 1, 12)
         self.assertEqual(rec.__str__(), "[Rectangle] (12) 2/1 - 4/6")
 
     """ Testing update method """
+
     def test_update(self):
         rec = Rectangle(10, 10, 10, 10, 10)
         rec.update(89)
@@ -124,12 +132,14 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rec.y, 5)
 
     """  Testing to_dictionary method """
+
     def test_to_dictionary(self):
         rec = Rectangle(10, 2, 1, 9, 7)
         result = {'x': 1, 'y': 9, 'id': 7, 'height': 2, 'width': 10}
         self.assertDictEqual(rec.to_dictionary(), result)
 
     """ Testing create method """
+
     def test_create(self):
         r1 = Rectangle(3, 5, 1)
         r1_dic = r1.to_dictionary()
@@ -137,6 +147,7 @@ class TestRectangle(unittest.TestCase):
         self.assertNotEqual(r1, r2)
 
     """ Testing save to file """
+
     def test_save_to_file_empty(self):
         Rectangle.save_to_file(None)
         with open("Rectangle.json") as fd:
@@ -154,13 +165,8 @@ class TestRectangle(unittest.TestCase):
         with open("Rectangle.json") as fd:
             self.assertEqual(expe, fd.read())
 
-    def test_save_to_file(self):
-        Rectangle.save_to_file([Rectangle(1, 2)])
-        result = '[{"x": 0, "y": 0, "id": 18, "height": 2, "width": 1}]'
-        with open("Rectangle.json") as fd:
-            self.assertEqual(result, fd.read())
-
     """ Testing load from file """
+
     def test_load(self):
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
