@@ -68,7 +68,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """
-        Return an instance witl all attribute aleady set
+        Return an instance with all attribute
         """
         if cls.__name__ == 'Square':
             dummy = cls(5)

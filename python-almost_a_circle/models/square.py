@@ -13,6 +13,7 @@ class Square(Rectangle):
     Class Square that inherits from Rectangle
     it receive size, x, y and id
     """
+
     def __init__(self, size, x=0, y=0, id=None):
         """
         When initialise she validates value and then
@@ -67,7 +68,7 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """
-        Dictionaty representation of the class
+        Dictionary representation of the class
         """
         dic_sqr = {
             'id': self.id,
