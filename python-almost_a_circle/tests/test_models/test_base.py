@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""unittest Class Base"""
+
+# 0. If it's not tested it doesn't work
+# Run: python3 -m unittest discover tests
+
 import os
 import unittest
 from models.base import Base
